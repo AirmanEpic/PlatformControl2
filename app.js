@@ -21,8 +21,13 @@ function devicelist(devices){
 			result = devices[i].id;
 
 			bluetoothSerial.connect(result,on_connect_success())
+			bluetoothSerial.subscribe('\n', ondata);
 		}
 	}
+}
+
+function ondata(data){
+	alert('data: '+data)
 }
 
 function on_connect_success(){

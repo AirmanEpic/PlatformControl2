@@ -29,11 +29,15 @@ function on_connect_success(){
 	alert("Successful connection");
 
 	$('.trackbutton').click(function(event) {
-		bluetoothSerial.send("t")
+		bluetoothSerial.send("t",function(){
+			alert("sent t");
+		})
 	});
 
 	$('.revbutton').click(function(event) {
-		bluetoothSerial.send("r")
+		bluetoothSerial.send("r",function(){
+			alert("sent r");
+		})
 	});
 }
 

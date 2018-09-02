@@ -29,13 +29,13 @@ function on_connect_success(){
 	alert("Successful connection");
 
 	$('.trackbutton').click(function(event) {
-		bluetoothSerial.send("t",function(){
+		bluetoothSerial.write("t",function(){
 			alert("sent t");
 		})
 	});
 
 	$('.revbutton').click(function(event) {
-		bluetoothSerial.send("r",function(){
+		bluetoothSerial.write("r",function(){
 			alert("sent r");
 		})
 	});

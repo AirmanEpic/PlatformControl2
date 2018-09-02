@@ -1,5 +1,13 @@
 var main=function(){
-
+	$('.connectbutton').click(function(event) {
+		//callback hell time
+		bluetoothSerial.list(function(devices){
+			for (var i in devices)
+			{
+				alert(devices[i].name)
+			}
+		})
+	});
 }
 
 function detectmob() { 

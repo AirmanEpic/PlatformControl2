@@ -6,8 +6,11 @@ var main=function(){
 }
 
 function devicelist(devices){
+	alert("HC-06 has length"+"HC-06".length)
 	for (var i in devices)
 	{
+		alert("Checking "+devices[i].name+" with length "+devices[i].name.length+" against HC-06")
+
 		if (devices[i].name=="HC-06")
 		{
 			alert("detected on I "+i)

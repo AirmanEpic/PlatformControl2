@@ -1,7 +1,10 @@
 var main=function(){
 	$('.connectbutton').click(function(event) {
 		//callback hell time
-		bluetoothSerial.list(devicelist(devices))
+		bluetoothSerial.list(function(devices){
+			alert("running function")
+			devicelist(devices);
+		})
 	});
 }
 

@@ -1,3 +1,5 @@
+var mode = -1;
+
 var main=function(){
 	$('.connectbutton').click(function(event) {
 		//callback hell time
@@ -20,23 +22,52 @@ function devicelist(devices){
 
 			result = devices[i].id;
 
-			bluetoothSerial.connect(result,on_connect_success())
+			bluetoothSerial.connect(result,function(){
+				alert("Initializing connection... Please wait")
+			})
 			bluetoothSerial.subscribe('\n', ondata);
 		}
 	}
 }
 
 function ondata(str){
+	if (mode==-1)
+	{
+		on_connect_success()
+		mode=1;
+	}
+
 	strchanged =  str.replace(/'/g,'"')
 	//alert("str changed: "+strchanged)
 
 	data = JSON.parse(strchanged)
 	//alert("New JSON string: "+JSON.stringify(data))
-	$('.databar').text("Current speed: "+data.trafreq+" & mode: "+data.mode)
+
+	if (parseInt(data.mode)==1)
+	{
+		dm=="Tracking"
+	}
+
+	if (parseInt(data.mode)==2)
+	{
+		dm=="Reset"
+	}
+
+	if (parseInt(data.mode)==3)
+	{
+		dm=="Drive"
+	}
+
+	if (parseInt(data.mode)==4)
+	{
+		dm=="End of Tracking"
+	}
+
+	$('.databar').text("Current speed: "+data.trafreq+" & mode: "+dm)
 }
 
 function on_connect_success(){
-	alert("Successful connection");
+	alert("Connected!");
 
 	$('.checkbox').css({"background-color":"#850000"})
 

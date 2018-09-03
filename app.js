@@ -16,7 +16,7 @@ function devicelist(devices){
 
 		if (devices[i].name=="HC-06")
 		{
-			alert("detected on I "+i)
+			//alert("detected on I "+i)
 
 			result = devices[i].id;
 
@@ -28,10 +28,10 @@ function devicelist(devices){
 
 function ondata(str){
 	strchanged =  str.replace(/'/g,'"')
-	alert("str changed: "+strchanged)
+	//alert("str changed: "+strchanged)
 
 	data = JSON.parse(strchanged)
-	alert("New JSON string: "+JSON.stringify(data))
+	//alert("New JSON string: "+JSON.stringify(data))
 	$('.databar').text("Current speed: "+data.freq+"& mode: "+data.mode)
 }
 

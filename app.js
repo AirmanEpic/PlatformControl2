@@ -38,7 +38,7 @@ function ondata(str){
 function on_connect_success(){
 	alert("Successful connection");
 
-	$('.checkbox').css({"background-color":"gray"})
+	$('.checkbox').css({"background-color":"#850000"})
 
 	$('.trackbutton').click(function(event) {
 		bluetoothSerial.write("t",function(){

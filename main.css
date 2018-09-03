@@ -2,6 +2,13 @@ p,h1,h2,h3,h4,h5{
 	margin:0;
 }
 
+h3{
+	font-size:102px;
+}
+h4{
+	font-size:94px;
+}
+
 .button{
 	display:flex;
 	justify-content: center;
@@ -12,7 +19,7 @@ p,h1,h2,h3,h4,h5{
 }
 
 .button p{
-	font-size:64px;
+	font-size:96px;
 }
 
 .horline{
@@ -21,8 +28,8 @@ p,h1,h2,h3,h4,h5{
 }
 
 .checkbox{
-	height:20px;
-	width:20px;
+	height:60px;
+	width:60px;
 	border:1px solid gray;
 	border-radius:2px;
 }

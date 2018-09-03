@@ -2,17 +2,17 @@ var main=function(){
 	$('.connectbutton').click(function(event) {
 		//callback hell time
 		bluetoothSerial.list(function(devices){
-			alert("running function")
+			//alert("running function")
 			devicelist(devices);
 		})
 	});
 }
 
 function devicelist(devices){
-	alert("HC-06 has length"+"HC-06".length)
+	//alert("HC-06 has length"+"HC-06".length)
 	for (var i in devices)
 	{
-		alert("Checking "+devices[i].name+" with length "+devices[i].name.length+" against HC-06")
+		//alert("Checking "+devices[i].name+" with length "+devices[i].name.length+" against HC-06")
 
 		if (devices[i].name=="HC-06")
 		{
@@ -26,22 +26,43 @@ function devicelist(devices){
 	}
 }
 
-function ondata(data){
-	alert('data: '+data)
+function ondata(str){
+	data = JSON.parse(str)
+	$('.databar').text("Current speed: "+data.freq+"& mode: "+data.mode)
 }
 
 function on_connect_success(){
 	alert("Successful connection");
 
+	$('.checkbox').css({"background-color":"gray"})
+
 	$('.trackbutton').click(function(event) {
 		bluetoothSerial.write("t",function(){
-			alert("sent t");
+			//alert("sent t");
 		})
 	});
 
 	$('.revbutton').click(function(event) {
 		bluetoothSerial.write("r",function(){
-			alert("sent r");
+			//alert("sent r");
+		})
+	});
+
+	$('.drivebutton').click(function(event) {
+		bluetoothSerial.write("d",function(){
+			//alert("sent r");
+		})
+	});
+
+	$('.incbutton').click(function(event) {
+		bluetoothSerial.write("+",function(){
+			//alert("sent r");
+		})
+	});
+
+	$('.decbutton').click(function(event) {
+		bluetoothSerial.write("-",function(){
+			//alert("sent r");
 		})
 	});
 }

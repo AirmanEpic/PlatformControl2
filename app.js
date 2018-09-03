@@ -32,7 +32,7 @@ function ondata(str){
 
 	data = JSON.parse(strchanged)
 	//alert("New JSON string: "+JSON.stringify(data))
-	$('.databar').text("Current speed: "+data.trafreq+"& mode: "+data.mode)
+	$('.databar').text("Current speed: "+data.trafreq+" & mode: "+data.mode)
 }
 
 function on_connect_success(){

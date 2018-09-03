@@ -20,7 +20,7 @@ h4{
 	align-items: center;
 	margin:4px;
 	padding:10px 20px;
-	border:1px solid #850000;
+	border:3px solid #850000;
 }
 
 .button p{
@@ -35,6 +35,6 @@ h4{
 .checkbox{
 	height:60px;
 	width:60px;
-	border:1px solid #850000;
+	border:3px solid #850000;
 	border-radius:2px;
 }

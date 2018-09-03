@@ -27,6 +27,7 @@ function devicelist(devices){
 }
 
 function ondata(str){
+	alert("str: "+str)
 	data = JSON.parse(str)
 	$('.databar').text("Current speed: "+data.freq+"& mode: "+data.mode)
 }
